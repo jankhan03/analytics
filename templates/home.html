@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Prediction Page</title>
+    <style type="text/css">
+      .semi {
+        color: rgba(255,255,255,0.1); /* Полупрозрачный цвет */
+      }
+    body {
+      background: rgb(146,107,162);
+      background: linear-gradient(120deg, rgba(146,107,162,1) 0%, rgba(162,163,228,0.7021183473389356) 58%, rgba(164,169,234,0.7357317927170868) 97%, rgba(164,169,234,1) 100%);
+    }
+    </style>
+
+  </head>
+  <body>
+    <h1 style="text-align: center;">Prediction Page</h1>
+
+    <div style="text-align: center;">
+
+    <form method="POST">
+      <h4>Тип продукции (МОЛОКО, ТВОРОГ, ЙОГУРТ, КЕФИР, МАСЛО, МОРОЖЕНОЕ, СЛИВКИ, СМЕТАНА, СЫР, ТВОРОГ и т д):</h4>
+      <input type="text" name="product_type" id="product_type" />
+      <h4>Процент жирности продукта(например, 45):</h4>
+      <input type="text" name="procentage" id="procentage" />
+      <h4>Год(например, 2023):</h4>
+      <input type="text" name="year" id="year" />
+      <h4>Месяц(1 ... 12):</h4>
+      <input type="text" name="month" id="month" />
+      <h4>Число месяца(1 ... 31):</h4>
+      <input type="text" name="day_of_month" id="day_of_month" />
+
+      <div>
+        <h3><button type="submit">Get prediction</button></h3>
+      </div>
+
+      <div class="semi">
+      <h2>Возьмите нас на работу, пожалуйста))</h2>
+      </div>
+
+      {% if prediction != 0 %}
+        <h1>Предсказанное количество продаж:</h1>
+        <h1>{{ prediction }}</h1>
+      {% endif %}
+    </form>
+
+  </body>
+</html>
